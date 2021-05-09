@@ -1,4 +1,4 @@
-# Getting Started with React
+# Getting Started with React.js
 
 Public URL: https://higheredlab.com/react-samples/
 
