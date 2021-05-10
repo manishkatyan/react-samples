@@ -5,12 +5,12 @@ export default function Pagination() {
   const [error, setError] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const pageSize = 10;
-  let maxPage = 10;
+  const pageSize = 5;
+  let maxPage = 20;
 
   const getPageData = () => {
     if (!data) return;
-    const startIndex = currentPage * pageSize - 10;
+    const startIndex = currentPage * pageSize - pageSize;
     const endIndex = startIndex + pageSize;
     return data.slice(startIndex, endIndex);
   };
@@ -37,21 +37,27 @@ export default function Pagination() {
 
   return (
     <>
-      <h1>Pagination</h1>
-      <div>
-        <PaginationData data={getPageData()} />
-        <button
-          disabled={currentPage === maxPage ? "disabled" : ""}
-          onClick={handleNext}
-        >
-          Next
-        </button>
-        <button
-          disabled={currentPage === 1 ? "disabled" : ""}
-          onClick={handlePrevious}
-        >
-          Previous
-        </button>
+      <div className="row">
+        <div className="col-4">
+          <h3>Features</h3>
+        </div>
+        <div className="col">
+          <PaginationData data={getPageData()} />
+          <button
+            className="btn btn-primary m-2"
+            disabled={currentPage === maxPage ? "disabled" : ""}
+            onClick={handleNext}
+          >
+            Next
+          </button>
+          <button
+            className="btn btn-secondary"
+            disabled={currentPage === 1 ? "disabled" : ""}
+            onClick={handlePrevious}
+          >
+            Previous
+          </button>
+        </div>
       </div>
     </>
   );
@@ -61,15 +67,22 @@ function PaginationData({ data }) {
   if (!data) return <p>No Data Available</p>;
   return (
     <>
-      <table>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Body</th>
+          </tr>
+        </thead>
         <tbody>
           {data &&
             data.map((row) => {
               return (
                 <tr key={row.id}>
-                  <td>{row.id}</td>
-                  <td>{row.title}</td>
-                  <td>{row.body}</td>
+                  <td class="align-top">{row.id}</td>
+                  <td class="align-top">{row.title}</td>
+                  <td class="align-top">{row.body}</td>
                 </tr>
               );
             })}

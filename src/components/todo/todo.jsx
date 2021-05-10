@@ -50,7 +50,6 @@ const ToDo = () => {
 
   return (
     <>
-      <h1>ToDo List</h1>
       <div>
         <form onSubmit={handleSubmit}>
           <input
