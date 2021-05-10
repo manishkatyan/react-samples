@@ -1,5 +1,6 @@
 import ToDo from "./components/todo/todo";
 import Pagination from "./components/pagination/pagination";
+import PaginationToDo from "./components/pagination/paginationToDo";
 import NavBar from "./components/navbar";
 import Like from "./components/like";
 import React from "react";
@@ -18,6 +19,7 @@ function App() {
           </Route>
           <Route path="/todo" component={ToDo}></Route>
           <Route path="/pagination" component={Pagination}></Route>
+          <Route path="/paginationToDo" component={PaginationToDo}></Route>
           <Redirect from="/" exact to="/like" />
         </Switch>
       </main>

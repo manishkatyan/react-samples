@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PaginationTypes from "./paginationTypes";
 
 export default function Pagination() {
   const [data, setData] = useState();
@@ -39,7 +40,7 @@ export default function Pagination() {
     <>
       <div className="row">
         <div className="col-4">
-          <h3>Features</h3>
+          <PaginationTypes />
         </div>
         <div className="col">
           <PaginationData data={getPageData()} />
@@ -80,9 +81,9 @@ function PaginationData({ data }) {
             data.map((row) => {
               return (
                 <tr key={row.id}>
-                  <td class="align-top">{row.id}</td>
-                  <td class="align-top">{row.title}</td>
-                  <td class="align-top">{row.body}</td>
+                  <td className="align-top">{row.id}</td>
+                  <td className="align-top">{row.title}</td>
+                  <td className="align-top">{row.body}</td>
                 </tr>
               );
             })}
