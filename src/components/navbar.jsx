@@ -22,18 +22,23 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="/like">
+              <NavLink className="nav-link" aria-current="page" to="like">
                 Like
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/todo">
+              <NavLink className="nav-link" to="todo">
                 ToDo
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/pagination">
+              <NavLink className="nav-link" to="pagination">
                 Pagination
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="currency">
+                Currency Converter
               </NavLink>
             </li>
             <li className="nav-item">

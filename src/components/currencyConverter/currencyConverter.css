@@ -1,0 +1,22 @@
+input {
+  float: right;
+  clear: both;
+  padding: 4px;
+}
+
+.currency-source,
+.currency-destination {
+  width: 60px;
+}
+
+.mb,
+.mc,
+.conversion-result {
+  margin-top: 20px;
+  width: 300px;
+}
+
+button {
+  margin: 4px !important;
+  padding: 4px;
+}

@@ -3,6 +3,7 @@ import Pagination from "./components/pagination/pagination";
 import PaginationToDo from "./components/pagination/paginationToDo";
 import NavBar from "./components/navbar";
 import Like from "./components/like";
+import CurrencyConverter from "./components/currencyConverter/currencyConverter";
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/todo" component={ToDo}></Route>
           <Route path="/pagination" component={Pagination}></Route>
           <Route path="/paginationToDo" component={PaginationToDo}></Route>
+          <Route path="/currency" component={CurrencyConverter}></Route>
           <Redirect from="/" exact to="/like" />
         </Switch>
       </main>
