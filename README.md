@@ -6,3 +6,4 @@ Follwoing samples for React.js are available:
 1. Like/Dislike button
 2. ToDo List
 3. Pagination
+4. Currency Converter
