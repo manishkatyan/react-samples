@@ -5,10 +5,10 @@ const PaginationTypes = () => {
     <>
       <ul>
         <li>
-          <a href="pagination">Next/Prev</a>
+          <a href="/react-samples/pagination">Next/Prev</a>
         </li>
         <li>
-          <a href="paginationToDo">Page Numbers</a>
+          <a href="/react-samples/paginationToDo">Page Numbers</a>
         </li>
       </ul>
     </>

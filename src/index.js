@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
 
 ReactDOM.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/react-samples">
     <App />
   </BrowserRouter>,
   document.getElementById("root")

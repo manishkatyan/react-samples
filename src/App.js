@@ -7,6 +7,7 @@ import CurrencyConverter from "./components/currencyConverter/currencyConverter"
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
+import { createBrowserHistory } from "history";
 
 function App() {
   console.log(process.env);
@@ -22,7 +23,7 @@ function App() {
           <Route path="/pagination" component={Pagination}></Route>
           <Route path="/paginationToDo" component={PaginationToDo}></Route>
           <Route path="/currency" component={CurrencyConverter}></Route>
-          <Redirect from="/" exact to="/like" />
+          <Redirect from="/" exact to="/currency" />
         </Switch>
       </main>
     </>
@@ -30,3 +31,7 @@ function App() {
 }
 
 export default App;
+
+export const history = createBrowserHistory({
+  basename: process.env.PUBLIC_URL,
+});

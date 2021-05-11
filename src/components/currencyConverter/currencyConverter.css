@@ -1,12 +1,16 @@
-input {
+.currency-source,
+.currency-destination {
+  width: 60px;
   float: right;
   clear: both;
   padding: 4px;
 }
 
-.currency-source,
-.currency-destination {
-  width: 60px;
+.currency-date {
+  width: 120px;
+  float: right;
+  clear: both;
+  padding: 4px;
 }
 
 .mb,
@@ -16,7 +20,7 @@ input {
   width: 300px;
 }
 
-button {
+.mc button {
   margin: 4px !important;
   padding: 4px;
 }

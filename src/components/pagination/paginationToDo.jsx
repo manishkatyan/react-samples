@@ -43,21 +43,16 @@ const PaginationToDo = () => {
 
   return (
     <>
-      <div className="row">
-        <div className="col-4">
-          <PaginationTypes />
-        </div>
-        <div className="col">
-          <PaginationData pageData={getPageData()} />
-          <PaginationV2
-            itemsCount={data && data.length}
-            pageSize={pageSize}
-            currentPage={currentPage}
-            onPageChange={handlePageChange}
-            onNext={handleNext}
-            onPrevious={handlePrevious}
-          />
-        </div>
+      <div>
+        <PaginationData pageData={getPageData()} />
+        <PaginationV2
+          itemsCount={data && data.length}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+          onNext={handleNext}
+          onPrevious={handlePrevious}
+        />
       </div>
     </>
   );
