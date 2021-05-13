@@ -7,10 +7,8 @@ import CurrencyConverter from "./components/currencyConverter/currencyConverter"
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
-import { createBrowserHistory } from "history";
 
 function App() {
-  console.log(process.env);
   return (
     <>
       <NavBar />
@@ -31,7 +29,3 @@ function App() {
 }
 
 export default App;
-
-export const history = createBrowserHistory({
-  basename: process.env.PUBLIC_URL,
-});

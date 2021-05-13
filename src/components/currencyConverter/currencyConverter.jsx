@@ -16,18 +16,15 @@ export default class CurrencyConverter extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
 
     const errors = this.validate();
 
     if (errors) {
-      console.log(errors);
-      const result = JSON.stringify(errors);
+      //const result = JSON.stringify(errors);
+      const result = "Please complete each field";
       this.setState({ result });
       return false;
     }
-
-    console.log("Converting currency");
 
     this.findRate();
   };
@@ -61,6 +58,39 @@ export default class CurrencyConverter extends React.Component {
     this.setState({ data, errors, result });
   };
 
+  handleCurrencySourceChange = ({ target: input }) => {
+    const currencyFormatReg = /^[A-Za-z]+$/;
+    if (!currencyFormatReg.test(input.value)) {
+      return;
+    }
+
+    const data = { ...this.state.data };
+    data.currencySource = input.value.substring(0, 3).toUpperCase();
+    this.setState({ data });
+  };
+
+  handleCurrencyDestinationChange = ({ target: input }) => {
+    const currencyFormatReg = /^[A-Za-z]+$/;
+    if (!currencyFormatReg.test(input.value)) {
+      return;
+    }
+
+    const data = { ...this.state.data };
+    data.currencyDestination = input.value.substring(0, 3).toUpperCase();
+    this.setState({ data });
+  };
+
+  handleCurrencyDateChange = ({ target: input }) => {
+    const dateFormatReg = /^[\d-]+$/;
+    if (!dateFormatReg.test(input.value)) {
+      return;
+    }
+
+    const data = { ...this.state.data };
+    data.currencyDate = input.value.substring(0, 10);
+    this.setState({ data });
+  };
+
   handleReset = () => {
     const data = { ...this.state.data };
     data["currencySource"] = "";
@@ -83,25 +113,18 @@ export default class CurrencyConverter extends React.Component {
       "&symbols=" +
       this.state.data.currencyDestination;
 
-    const debug = false;
-    if (debug) {
-      const result = "Calling server in debug mode";
-      this.setState({ result });
-    } else {
-      axios
-        .request(apiURL)
-        .then((response) => {
-          console.log(response);
-          const result =
-            response.data.rates[this.state.data.currencyDestination];
-          this.setState({ result });
-        })
-        .catch((error) => {
-          console.log(error);
-          const result = error.response.data.error;
-          this.setState({ result });
-        });
-    }
+    axios
+      .get(apiURL)
+      .then((response) => {
+        //console.log("response", JSON.stringify(response));
+        const result = response.data.rates[this.state.data.currencyDestination];
+        this.setState({ result });
+      })
+      .catch((error) => {
+        //console.log("error", JSON.stringify(error));
+        const result = error.response.data.error;
+        this.setState({ result });
+      });
   };
 
   render() {
@@ -115,11 +138,9 @@ export default class CurrencyConverter extends React.Component {
               type="text"
               className="currency-source"
               name="currencySource"
-              maxLength="3"
-              minLength="3"
               placeholder="USD"
-              value={this.state.data.currencySource.toUpperCase()}
-              onChange={this.handleChange}
+              value={this.state.data.currencySource}
+              onChange={this.handleCurrencySourceChange}
             ></input>
           </div>
 
@@ -129,11 +150,9 @@ export default class CurrencyConverter extends React.Component {
               type="text"
               className="currency-destination"
               name="currencyDestination"
-              maxLength="3"
-              minLength="3"
               placeholder="EUR"
               value={this.state.data.currencyDestination}
-              onChange={this.handleChange}
+              onChange={this.handleCurrencyDestinationChange}
             ></input>
           </div>
 
@@ -143,18 +162,16 @@ export default class CurrencyConverter extends React.Component {
               type="text"
               className="currency-date"
               name="currencyDate"
-              maxLength="10"
-              minLength="10"
               placeholder="2021-05-05"
               value={this.state.data.currencyDate}
-              onChange={this.handleChange}
+              onChange={this.handleCurrencyDateChange}
             ></input>
           </div>
           <div className="mc">
             <button
               className="find-rate"
               type="submit"
-              onSubmit={this.handleSubmit}
+              onClick={this.handleSubmit}
             >
               Find Rate
             </button>
