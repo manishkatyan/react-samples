@@ -4,10 +4,6 @@ import PropTypes from "prop-types";
 import "./currencyConverter.css";
 
 export default class CurrencyConverter extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     data: { currencySource: "", currencyDestination: "", currencyDate: "" },
     errors: {},

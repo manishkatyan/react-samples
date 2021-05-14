@@ -42,6 +42,11 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
+              <NavLink className="nav-link" to="/unit-test">
+                Unit Test
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink
                 className="nav-link disabled"
                 to="#"

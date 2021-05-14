@@ -139,27 +139,6 @@ describe("CurrencyConverter", () => {
             base: "USD",
             date: "2012-02-02",
           },
-          status: 200,
-          statusText: "",
-          headers: {
-            "content-type": "application/json",
-            "cache-control": "public, max-age=1800",
-            expires: "Sat, 20 Jul 2019 02:01:47 GMT",
-          },
-          config: {
-            transformRequest: {},
-            transformResponse: {},
-            timeout: 0,
-            xsrfCookieName: "XSRF-TOKEN",
-            xsrfHeaderName: "X-XSRF-TOKEN",
-            maxContentLength: -1,
-            headers: {
-              Accept: "application/json, text/plain, */*",
-            },
-            method: "get",
-            url: "https://api.exchangeratesapi.io/2012-02-02?base=USD&symbols=EUR",
-          },
-          request: {},
         })
       );
       expect(axios.get).toHaveBeenCalledTimes(0);
@@ -184,27 +163,6 @@ describe("CurrencyConverter", () => {
             base: "USD",
             date: "2012-02-02",
           },
-          status: 200,
-          statusText: "",
-          headers: {
-            "content-type": "application/json",
-            "cache-control": "public, max-age=1800",
-            expires: "Sat, 20 Jul 2019 02:01:47 GMT",
-          },
-          config: {
-            transformRequest: {},
-            transformResponse: {},
-            timeout: 0,
-            xsrfCookieName: "XSRF-TOKEN",
-            xsrfHeaderName: "X-XSRF-TOKEN",
-            maxContentLength: -1,
-            headers: {
-              Accept: "application/json, text/plain, */*",
-            },
-            method: "get",
-            url: "https://api.exchangeratesapi.io/2012-02-02?base=USD&symbols=EUR",
-          },
-          request: {},
         })
       );
       findRate.simulate("click");

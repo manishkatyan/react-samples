@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PaginationTypes from "./paginationTypes";
 import _ from "lodash";
 import PropTypes from "prop-types";
 
@@ -97,19 +96,17 @@ const PaginationV2 = (props) => {
 
   const pages = _.range(1, pagesCount + 1);
 
-  console.log("PaginationV2", props.currentPage);
-
   return (
     <>
       <nav aria-label="Page navigation example">
         <ul className="pagination">
           <li className="page-item">
-            <a
+            <button
               onClick={props.onPrevious}
               className={props.currentPage === 1 ? "btn disabled" : "page-link"}
             >
               Previous
-            </a>
+            </button>
           </li>
           {pages.map((page) => {
             return (
@@ -119,25 +116,25 @@ const PaginationV2 = (props) => {
                 }
                 key={page}
               >
-                <a
+                <button
                   className="page-link"
                   onClick={() => props.onPageChange(page)}
                 >
                   {page}
-                </a>
+                </button>
               </li>
             );
           })}
 
           <li className="page-item">
-            <a
+            <button
               onClick={props.onNext}
               className={
                 props.currentPage === pagesCount ? "btn disabled" : "page-link"
               }
             >
               Next
-            </a>
+            </button>
           </li>
         </ul>
       </nav>
@@ -146,7 +143,7 @@ const PaginationV2 = (props) => {
 };
 
 PaginationV2.propTypes = {
-  itemsCount: PropTypes.number.isRequired,
+  itemsCount: PropTypes.number,
   pageSize: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired,
   onPageChange: PropTypes.func.isRequired,
