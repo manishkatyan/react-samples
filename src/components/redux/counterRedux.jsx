@@ -9,6 +9,10 @@ const CounterRedux = () => {
   return (
     <>
       <div>
+        <p>
+          The state of the counter is stored in Redux store and is changed via a
+          reducer.
+        </p>
         <div>
           <div style={{ fontSize: 60, fontWeight: 600 }}>{counter}</div>
           <button
