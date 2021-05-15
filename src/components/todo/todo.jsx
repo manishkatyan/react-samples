@@ -78,6 +78,15 @@ const ToDo = () => {
           </li>
         ))}
       </ul>
+      <pre>
+        <a
+          href="https://github.com/manishkatyan/react-toolkit/blob/master/src/components/todo/todo.jsx"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Source Code
+        </a>
+      </pre>
     </>
   );
 };

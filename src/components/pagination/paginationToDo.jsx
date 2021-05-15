@@ -62,7 +62,7 @@ export default PaginationToDo;
 const PaginationData = (props) => {
   const { pageData } = props;
 
-  if (!pageData) return <p>No Data Available</p>;
+  if (!pageData) return <p>Loading ...</p>;
 
   return (
     <table className="table table-striped">
@@ -138,6 +138,15 @@ const PaginationV2 = (props) => {
           </li>
         </ul>
       </nav>
+      <pre>
+        <a
+          href="https://github.com/manishkatyan/react-toolkit/blob/master/src/components/pagination/paginationToDo.jsx"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Source Code
+        </a>
+      </pre>
     </>
   );
 };

@@ -53,6 +53,15 @@ export default function Like(props) {
         >
           Dislike | <span>{dislike.count}</span>
         </button>
+        <pre>
+          <a
+            href="https://github.com/manishkatyan/react-toolkit/blob/master/src/components/like.jsx"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Source Code
+          </a>
+        </pre>
       </div>
     </>
   );

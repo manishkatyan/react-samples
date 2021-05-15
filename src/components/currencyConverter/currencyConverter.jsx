@@ -181,6 +181,16 @@ export default class CurrencyConverter extends React.Component {
           </div>
         </form>
         <div className="conversion-result">{this.state.result}</div>
+
+        <pre>
+          <a
+            href="https://github.com/manishkatyan/react-toolkit/blob/master/src/components/currencyConverter/currencyConverter.jsx"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Source Code
+          </a>
+        </pre>
       </>
     );
   }
